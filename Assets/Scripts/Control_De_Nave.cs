@@ -21,7 +21,7 @@ public class Control_De_Nave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.deltaTime + " seg " + (1.0f / Time.deltaTime) + " FPS");
+        //Debug.Log(Time.deltaTime + " seg " + (1.0f / Time.deltaTime) + " FPS");
         //print("Hola");
         ProcesarInput();
     }
