@@ -17,11 +17,6 @@ public class MainMenu : MonoBehaviour
         
     }
     
-    public void EscenaDemo()
-    {
-        SceneManager.LoadScene("NivelDemo");
-    }
-    
     public void EscenaJuego()
     {
         SceneManager.LoadScene("Nivel1");
