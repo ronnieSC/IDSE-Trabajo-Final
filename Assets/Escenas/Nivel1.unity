@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Peligrosa (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
+      objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -376,6 +380,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7314693202466409569, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7532322215232906881, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Name
       value: Pared Derecha
@@ -427,6 +435,10 @@ PrefabInstance:
     - target: {fileID: 8507509315285450783, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionSegura
       objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
@@ -796,6 +808,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
+      objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -892,6 +908,10 @@ PrefabInstance:
     - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Name
       value: Plataforma Peligrosa (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
       objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
@@ -990,6 +1010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Peligrosa (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
+      objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1087,6 +1111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Peligrosa (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
+      objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1183,6 +1211,10 @@ PrefabInstance:
     - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Name
       value: Plataforma Peligrosa (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
       objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
@@ -1284,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Name
       value: Plataforma Peligrosa (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906124245864139101, guid: c07841b4be1187246a45c29abce181c2, type: 3}
+      propertyPath: m_TagString
+      value: ColisionPeligrosa
       objectReference: {fileID: 0}
     - target: {fileID: 9107688658855352412, guid: c07841b4be1187246a45c29abce181c2, type: 3}
       propertyPath: m_Enabled
