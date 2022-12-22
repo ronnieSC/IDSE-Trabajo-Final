@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -728,7 +728,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1951771337, guid: aa76e4181d97d304798a4eefa7807adc, type: 3}
       propertyPath: m_Drag
-      value: 0.7
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951771337, guid: aa76e4181d97d304798a4eefa7807adc, type: 3}
+      propertyPath: m_Mass
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1951771337, guid: aa76e4181d97d304798a4eefa7807adc, type: 3}
       propertyPath: m_Constraints
@@ -737,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 493913188569668495, guid: aa76e4181d97d304798a4eefa7807adc, type: 3}
       propertyPath: m_Name
       value: Nave
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880696049969986806, guid: aa76e4181d97d304798a4eefa7807adc, type: 3}
+      propertyPath: mainThrust
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5082060162080982414, guid: aa76e4181d97d304798a4eefa7807adc, type: 3}
       propertyPath: m_RootOrder
