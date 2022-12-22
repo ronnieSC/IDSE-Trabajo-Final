@@ -5,16 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Control_De_Nave : MonoBehaviour
 {
-    Rigidbody rigidbody;
-    Transform transform;
-    AudioSource audiosource;
+    Rigidbody rigidbody_;
+    Transform transform_;
+    AudioSource audiosource_;
     
+    [SerializeField] float mainThrust = 0.10f;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        transform = GetComponent<Transform>();
-        audiosource = GetComponent<AudioSource>();
+        rigidbody_ = GetComponent<Rigidbody>();
+        transform_ = GetComponent<Transform>();
+        audiosource_ = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,22 +66,21 @@ public class Control_De_Nave : MonoBehaviour
 
     private void Propulsion()
     {
+        rigidbody_.freezeRotation = true;
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidbody.freezeRotation = true;
             //print("Propulsor");
-            rigidbody.AddRelativeForce(Vector3.up);     // X=0, Y=1, Z=0
+            rigidbody_.AddRelativeForce(Vector3.up*mainThrust);     // X=0, Y=1, Z=0
 
-            if (!audiosource.isPlaying)
+            if (!audiosource_.isPlaying)
             {
-                audiosource.Play();
-            }
-            else
-            {
-                audiosource.Stop();
+                audiosource_.Play();
             }
         }
-        rigidbody.freezeRotation = false;
+        else{
+            audiosource_.Stop();
+        }
+        rigidbody_.freezeRotation = false;
     }
 
     private void Rotacion()
