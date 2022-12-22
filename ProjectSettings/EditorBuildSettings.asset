@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Escenas/Nivel5.unity
     guid: 51ba1b7a7db0dc34b9aa9111331b76fa
   - enabled: 1
+    path: Assets/Escenas/MenuGameOver.unity
+    guid: 8e345781670f4d042a171c133ae88e2e
+  - enabled: 1
+    path: Assets/Escenas/MenuNextLvl.unity
+    guid: ae1343d52f280234dbbb0aac96252ffb
+  - enabled: 1
     path: Assets/Escenas/NivelDemo.unity
     guid: 925ae64b3a344284fa93cf4d25cc3ce6
   m_configObjects: {}
