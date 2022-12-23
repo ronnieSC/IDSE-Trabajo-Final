@@ -7,6 +7,17 @@ TagManager:
   - ColisionSegura
   - Aterrizaje
   - ColisionPeligrosa
+  - Combustible
+  - ColisionPeligrosa1
+  - Aterrizaje1
+  - ColisionPeligrosa2
+  - Aterrizaje2
+  - ColisionPeligrosa3
+  - Aterrizaje3
+  - ColisionPeligrosa4
+  - Aterrizaje4
+  - ColisionPeligrosa5
+  - Aterrizaje5
   layers:
   - Default
   - TransparentFX

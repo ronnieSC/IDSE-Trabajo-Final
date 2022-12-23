@@ -9,10 +9,11 @@ public class ControlDeNave : MonoBehaviour
     Transform transform;
     AudioSource audioSource;
 
-    enum EstadoNave { Viva, Muerta, NivelCompleto};
-    private EstadoNave estadoNave = EstadoNave.Viva;
     private MainMenu m = new MainMenu();
-    private static int vidas = 2;
+
+    [SerializeField] private GameObject[] hearts; 
+    private static int life;
+    private static TiempoEnSegundos2 time;
 
     [SerializeField] float velocidadPropulsion = 200.0f;  //valor standar ya que delta es aprox 0.2
     [SerializeField] float velocidadRotacion = 200.0f;
@@ -33,6 +34,9 @@ public class ControlDeNave : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         transform = GetComponent<Transform>(); // no es necesario
         audioSource = GetComponent<AudioSource>();
+        time = new TiempoEnSegundos2();
+
+        life = hearts.Length;
     }
 
     // Update is called once per frame
@@ -43,84 +47,51 @@ public class ControlDeNave : MonoBehaviour
 
      private void OnCollisionEnter(Collision collision)
     {
-        if(estadoNave != EstadoNave.Viva)
-        {
-            return;
-        }
-
         switch (collision.gameObject.tag)
         {
             case "ColisionSegura":
-                estadoNave = EstadoNave.Viva;
                 //print("Colision Segura ...");
                 break;
             case "Combustible":
-                print("Combustible");
-                break;
-            case "Aterrizaje":
-                ProcesarNivelCompleto();
-                Invoke("PasarNivel0", timerNivelCompleto);
-                print("Llegaste");
+                //Debug.Log("chocaaaaaaaaaaaaaaaaa");
+                addCombustible();
                 break;
             case "ColisionPeligrosa":
                 ProcesarMuerte();
-                Invoke("Muerte0", timerMuerte);
                 break;
             case "Aterrizaje1":
                 ProcesarNivelCompleto();
                 Invoke("PasarNivel1", timerNivelCompleto);
                 print("Llegaste");
                 break;
-            case "ColisionPeligrosa1":
-                ProcesarMuerte();
-                if(vidas <= 0){
-                    vidas = 2;
-                    m.CargarMenuReintentar();
-                }else{
-                    Invoke("Muerte1", timerMuerte);
-                    vidas = vidas - 1;
-                    print(vidas);
-                }
-                break;
             case "Aterrizaje2":
                 ProcesarNivelCompleto();
                 Invoke("PasarNivel2", timerNivelCompleto);
                 print("Llegaste");
-                break;
-            case "ColisionPeligrosa2":
-                ProcesarMuerte();
-                Invoke("Muerte2", timerMuerte);
                 break;
             case "Aterrizaje3":
                 ProcesarNivelCompleto();
                 Invoke("PasarNivel3", timerNivelCompleto);
                 print("Llegaste");
                 break;
-            case "ColisionPeligrosa3":
-                ProcesarMuerte();
-                Invoke("Muerte3", timerMuerte);
-                break;
             case "Aterrizaje4":
                 ProcesarNivelCompleto();
                 Invoke("PasarNivel4", timerNivelCompleto);
                 print("Llegaste");
-                break;
-            case "ColisionPeligrosa4":
-                ProcesarMuerte();
-                Invoke("Muerte4", timerMuerte);
                 break;
             case "Aterrizaje5":
                 ProcesarNivelCompleto();
                 Invoke("PasarNivel5", timerNivelCompleto);
                 print("Llegaste");
                 break;
-            case "ColisionPeligrosa5":
-                ProcesarMuerte();
-                Invoke("Muerte5", timerMuerte);
-                break;
             
         }
 
+    }
+    private void addCombustible(){
+        if(TiempoEnSegundos2.tiempoValor <= 100){
+            TiempoEnSegundos2.tiempoValor += 5f;
+        }
     }
 
     private void ProcesarNivelCompleto()
@@ -128,7 +99,6 @@ public class ControlDeNave : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(sonidoNivelCompleto);
         //partNivelCompleto.Play();
-        estadoNave = EstadoNave.NivelCompleto;
         m.CargarMenuSiguiente();
     }
 
@@ -136,14 +106,20 @@ public class ControlDeNave : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.PlayOneShot(sonidoMuerte);
-        //partMuerte.Play();
-        estadoNave = EstadoNave.Muerta;
+        
+        life--;
+
+        if(life==0){
+            //Invoke("Muerte1", timerMuerte);
+            Muerte(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        hearts[life].SetActive(false);
     }
 ////////////////////////////////////////////////////////
 
-    private void Muerte0()
+    private void Muerte(int i)
     {
-        SceneManager.LoadScene("NivelDemo");
+        SceneManager.LoadScene("Nivel"+i);
     }
 
     private void PasarNivel0()
@@ -151,16 +127,7 @@ public class ControlDeNave : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    private void Muerte1()
-    {
-        SceneManager.LoadScene("Nivel1");
-    }
-
     private void PasarNivel1()
-    {
-        SceneManager.LoadScene("MenuNextLvl");
-    }
-    private void Muerte2()
     {
         SceneManager.LoadScene("Nivel2");
     }
@@ -170,27 +137,12 @@ public class ControlDeNave : MonoBehaviour
         SceneManager.LoadScene("Nivel3");
     }
 
-    private void Muerte3()
-    {
-        SceneManager.LoadScene("Nivel3");
-    }
-
     private void PasarNivel3()
     {
         SceneManager.LoadScene("Nivel4");
     }
 
-    private void Muerte4()
-    {
-        SceneManager.LoadScene("Nivel4");
-    }
-
     private void PasarNivel4()
-    {
-        SceneManager.LoadScene("Nivel5");
-    }
-
-    private void Muerte5()
     {
         SceneManager.LoadScene("Nivel5");
     }
@@ -203,11 +155,9 @@ public class ControlDeNave : MonoBehaviour
 ////////////////////////////////////////////////
     private void ProcesarInput()
     {
-        if(estadoNave == EstadoNave.Viva)
-        {
-            ProcesarPropulsion();
-            ProcesarRotacion();
-        }
+        ProcesarPropulsion();
+        ProcesarRotacion();
+        
     }
 
     private void ProcesarPropulsion()

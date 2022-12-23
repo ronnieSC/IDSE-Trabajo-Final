@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class TiempoEnSegundos2 : MonoBehaviour
 {
     public TMP_Text tiempoText;
-    public float tiempoValor;
+    public static float tiempoValor;
     public float incrementoPorSegundo;
 
     public int numeroDeEscena;
@@ -19,7 +19,7 @@ public class TiempoEnSegundos2 : MonoBehaviour
         //tiempoValor = float.Parse(tiempoText.text);
         //incrementoPorSegundo = -1;
         print(tiempoText.text);
-
+        tiempoValor = 100f;
         //numeroDeEscena = 1;
     }
 
@@ -32,11 +32,12 @@ public class TiempoEnSegundos2 : MonoBehaviour
             m.CargarMenuReintentar();
             //MainMenu.ReintentarJuego(numeroDeEscena+1);
         }
+        
         else {
-            tiempoText.text = (int)tiempoValor + "";
+            Debug.Log("En TIEMPO SEGUNDOS: "+tiempoValor);
+            tiempoText.text = (int)tiempoValor + "%";
             tiempoValor = tiempoValor + incrementoPorSegundo * Time.deltaTime;
         }
         
     }
-
 }
