@@ -11,6 +11,8 @@ public class ControlDeNave : MonoBehaviour
 
     enum EstadoNave { Viva, Muerta, NivelCompleto};
     private EstadoNave estadoNave = EstadoNave.Viva;
+    private MainMenu m = new MainMenu();
+    private static int vidas = 2;
 
     [SerializeField] float velocidadPropulsion = 200.0f;  //valor standar ya que delta es aprox 0.2
     [SerializeField] float velocidadRotacion = 200.0f;
@@ -71,7 +73,14 @@ public class ControlDeNave : MonoBehaviour
                 break;
             case "ColisionPeligrosa1":
                 ProcesarMuerte();
-                Invoke("Muerte1", timerMuerte);
+                if(vidas <= 0){
+                    vidas = 2;
+                    m.CargarMenuReintentar();
+                }else{
+                    Invoke("Muerte1", timerMuerte);
+                    vidas = vidas - 1;
+                    print(vidas);
+                }
                 break;
             case "Aterrizaje2":
                 ProcesarNivelCompleto();
@@ -120,6 +129,7 @@ public class ControlDeNave : MonoBehaviour
         audioSource.PlayOneShot(sonidoNivelCompleto);
         //partNivelCompleto.Play();
         estadoNave = EstadoNave.NivelCompleto;
+        m.CargarMenuSiguiente();
     }
 
     private void ProcesarMuerte()
@@ -148,7 +158,7 @@ public class ControlDeNave : MonoBehaviour
 
     private void PasarNivel1()
     {
-        SceneManager.LoadScene("Nivel2");
+        SceneManager.LoadScene("MenuNextLvl");
     }
     private void Muerte2()
     {

@@ -16,19 +16,30 @@ public class MainMenu : MonoBehaviour
     {
         
     }
-    
-    public void EscenaDemo()
-    {
-        SceneManager.LoadScene("NivelDemo");
-    }
-    
-    public void EscenaJuego()
-    {
-        SceneManager.LoadScene("Nivel1");
-    }
 
     public void Salir()
     {
         Application.Quit();
     }
+
+    public void ReintentarJuego(int num)
+    {
+        SceneManager.LoadScene("Nivel"+num);
+    }
+
+    public void CargarEscenaJuego(int num)
+    {
+        SceneManager.LoadScene("Nivel"+num);
+    }
+
+    public void CargarMenuReintentar()
+    {
+        SceneManager.LoadScene("MenuGameOver");
+    }
+
+    public void CargarMenuSiguiente()
+    {
+        SceneManager.LoadScene("MenuNextLv2");
+    }
+
 }
