@@ -150,10 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051b0a0f2ff14a4d87022657546d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 7.47, y: 4.95, z: 27.87559}
-  dirDesplazamiento: {x: 0, y: -3, z: 0}
-  desplazamiento: 0
-  periodo: 5
+  motion: {x: 0, y: -11, z: 0}
+  period: 3
 --- !u!1001 &474093467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,10 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051b0a0f2ff14a4d87022657546d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 13.79, y: 1.83, z: 27.87559}
-  dirDesplazamiento: {x: 0, y: 2, z: 0}
-  desplazamiento: 0
-  periodo: 5
+  motion: {x: 0, y: 4, z: 0}
+  period: 4
 --- !u!1001 &733543197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,10 +927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051b0a0f2ff14a4d87022657546d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 13.79, y: 1.83, z: 27.87559}
-  dirDesplazamiento: {x: 0, y: 2, z: 0}
-  desplazamiento: 0
-  periodo: 5
+  motion: {x: 0, y: 5.3, z: 0}
+  period: 4
 --- !u!1001 &1491066496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1025,10 +1019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051b0a0f2ff14a4d87022657546d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: -14.42, y: -2.57, z: 27.87559}
-  dirDesplazamiento: {x: -10, y: 0, z: 0}
-  desplazamiento: 0
-  periodo: 5
+  motion: {x: 0, y: 0, z: 0}
+  period: 1
 --- !u!4 &1665321082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7760312244117717549, guid: 3739e3efec167784dbee75148acc69a8, type: 3}
@@ -1135,10 +1127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051b0a0f2ff14a4d87022657546d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: -14.42, y: -2.57, z: 27.87559}
-  dirDesplazamiento: {x: -10, y: 0, z: 0}
-  desplazamiento: 0
-  periodo: 5
+  motion: {x: 0, y: 0, z: 0}
+  period: 1
 --- !u!1001 &1915415014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1176,7 +1166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7427527930148041490, guid: 4dc74f66387577f45b80a920f2724bd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.8
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 7427527930148041490, guid: 4dc74f66387577f45b80a920f2724bd0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1234,10 +1224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6051b0a0f2ff14a4d87022657546d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 26.6, y: -2.57, z: 27.87559}
-  dirDesplazamiento: {x: -3, y: 0, z: 0}
-  desplazamiento: 0
-  periodo: 5
+  motion: {x: 0, y: 0, z: 0}
+  period: 1
 --- !u!1 &2009402673
 GameObject:
   m_ObjectHideFlags: 0
